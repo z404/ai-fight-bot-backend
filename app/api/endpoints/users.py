@@ -1,15 +1,14 @@
 from typing import Any, List
 
-from fastapi import APIRouter, Body, Depends, HTTPException
-from fastapi.encoders import jsonable_encoder
-from pydantic.networks import EmailStr
-from sqlalchemy.orm import Session
-
 import crud
 import models
 import schemas
 from api import deps
 from core.config import settings
+from fastapi import APIRouter, Body, Depends, HTTPException
+from fastapi.encoders import jsonable_encoder
+from pydantic.networks import EmailStr
+from sqlalchemy.orm import Session
 
 router = APIRouter()
 
@@ -105,8 +104,7 @@ def create_user_open(
             status_code=400,
             detail="The user with this username already exists in the system",
         )
-    user_in = schemas.UserCreate(
-        password=password, email=email, full_name=full_name)
+    user_in = schemas.UserCreate(password=password, email=email, full_name=full_name)
     user = crud.user.create(db, obj_in=user_in)
     return user
 

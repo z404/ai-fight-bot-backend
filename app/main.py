@@ -1,9 +1,7 @@
-from fastapi import FastAPI
 import uvicorn
-
 from api.api import api_router
 from core.config import settings
-
+from fastapi import FastAPI
 
 app = FastAPI(
     title="AI Fight Bot",
