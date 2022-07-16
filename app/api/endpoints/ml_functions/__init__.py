@@ -1,12 +1,15 @@
 from .task1 import task_1, task_detail_1
+from .task2 import task_2, task_detail_2
 
 class TaskMapper:
     def __init__(self):
         self.task_to_function = {
             1: task_1,
+            2: task_2,
         }
         self.task_desc_to_function = {
             1: task_detail_1,
+            2: task_detail_2,
         }
 
     def get_task_function(self, task_id, parameters):
