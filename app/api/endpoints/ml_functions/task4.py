@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 def task_4(parameters):
     if "min_samples_leaf" not in parameters:
-        return (False, 0, "min samples leaf not provided", None)
+        return (False, 0, " provided", None)
     return __task_4_execute__(min_samples_leaf=parameters["min_samples_leaf"], identifier = parameters["identifier"] or "test")
 
 def __task_4_execute__(min_samples_leaf=7, identifier="test"):
